@@ -5,13 +5,14 @@ function TareaFormulario(props) {
 	const[input, setInput] = useState('');
 
 	const manejarCambio = (e) => {
-		console.log("escibiendo");
+		setInput(e.target.value);
+		console.log(e.target.value);
 	}
 	const manejarEnvio = e =>{
 		const tareaNueva = {
 			id: "1564654",
 			texto: "hola",
-	}
+	}}
 	return (
 		<form className='tarea-fromulario'>
 			<input
@@ -25,5 +26,5 @@ function TareaFormulario(props) {
 		</form>
 	);
 };
-}
+
 export default TareaFormulario;
