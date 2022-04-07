@@ -1,7 +1,14 @@
 import React from 'react';
 import '../hojas-de-estilo/Tarea.css';
 import { RiDeleteBin5Line } from 'react-icons/ri';
-const tarea = ({ texto, completada }) => {
+
+const Tarea = ({
+	id,
+	texto,
+	completada,
+	completarTarea,
+	eliminarTarea,
+}) => {
 	return (
 		<div
 			className={
@@ -10,12 +17,17 @@ const tarea = ({ texto, completada }) => {
 					: 'tarea-contenedor'
 			}
 		>
-			<div className='tarea-texto'>{texto}</div>
-			<div className='tarea-contrenedor-icono'>
+			<div className='tarea-texto' onClick={() => completarTarea(id)}>
+				{texto}
+			</div>
+			<div
+				className='tarea-contrenedor-icono'
+				onClick={() => eliminarTarea(id)}
+			>
 				<RiDeleteBin5Line className='tarea-icono' />
 			</div>
 		</div>
 	);
 };
 
-export default tarea;
+export default Tarea;
